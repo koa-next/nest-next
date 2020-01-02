@@ -12,6 +12,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
+    "noImplicitAny": false,
     "noUnusedParameters": true,
     "removeComments": false,
     "preserveConstEnums": true,
@@ -31,8 +32,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }

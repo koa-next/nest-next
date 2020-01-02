@@ -1,11 +1,12 @@
 import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
   DocumentContext,
   DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
 } from 'next/document';
+
 const debug = require('debug')('nest-next:next:document');
 
 class MyDocument extends Document {

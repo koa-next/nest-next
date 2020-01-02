@@ -1,9 +1,12 @@
-import React from 'react';
+import withRedux from 'next-redux-wrapper';
 import App, { AppContext, AppInitialProps } from 'next/app';
+import React from 'react';
+import { Provider } from 'react-redux';
+import configureStore from '../redux';
 
 const debug = require('debug')('nest-next:next:app');
 
-class MyApp extends App {
+class MyApp extends App<any> {
   static async getInitialProps(ctx: AppContext) {
     try {
       const appProps = await App.getInitialProps(ctx);
@@ -15,9 +18,13 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />;
+    const { Component, pageProps, store } = this.props;
+    return (
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    );
   }
 }
 
-export default MyApp;
+export default withRedux(configureStore)(MyApp);
