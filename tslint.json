@@ -5,7 +5,9 @@
     "tslint-plugin-prettier"
   ],
   "rules": {
-    "prettier": true
+    "prettier": true,
+    "no-implicit-dependencies": [true, "dev"],
+    "jsx-no-multiline-js": false
   },
   "rulesDirectory": [
     "app",

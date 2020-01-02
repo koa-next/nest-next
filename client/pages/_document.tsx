@@ -1,6 +1,5 @@
 import Document, {
   DocumentContext,
-  DocumentInitialProps,
   Head,
   Html,
   Main,
@@ -16,7 +15,7 @@ class MyDocument extends Document {
       return { ...initialProps };
     } catch (err) {
       debug('next document error %o', err);
-      return {} as DocumentInitialProps;
+      throw err;
     }
   }
 
