@@ -5,8 +5,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
-
-const debug = require('debug')('nest-next:next:document');
+import { document as logger } from '../utils/logger';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -14,7 +13,7 @@ class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return { ...initialProps };
     } catch (err) {
-      debug('next document error %o', err);
+      logger.error(err);
       throw err;
     }
   }

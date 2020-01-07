@@ -1,0 +1,20 @@
+{
+  "presets": [
+    ["next/babel", {
+      "preset-env": {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "ie > 9"
+          ]
+        },
+        "useBuiltIns": "usage",
+        "corejs": 3,
+        "loose": true
+      }
+    }]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-optional-chaining"
+  ]
+}

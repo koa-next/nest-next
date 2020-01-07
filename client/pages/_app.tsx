@@ -3,8 +3,7 @@ import App, { AppContext } from 'next/app';
 import React from 'react';
 import { Provider } from 'react-redux';
 import configureStore from '../redux';
-
-const debug = require('debug')('nest-next:next:app');
+import { app as logger } from '../utils/logger';
 
 class MyApp extends App<any> {
   static async getInitialProps(ctx: AppContext) {
@@ -12,7 +11,7 @@ class MyApp extends App<any> {
       const appProps = await App.getInitialProps(ctx);
       return { ...appProps };
     } catch (err) {
-      debug('next app error %o', err);
+      logger.error(err);
       throw err;
     }
   }
