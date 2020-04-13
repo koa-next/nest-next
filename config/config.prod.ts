@@ -6,7 +6,7 @@ const config = {
     dir: path.join(process.cwd(), './client'),
     quiet: true,
     conf: {
-      assetPrefix: 'http://127.0.0.1:8080',
+      assetPrefix: 'http://127.0.0.1:3000',
     },
   },
 };

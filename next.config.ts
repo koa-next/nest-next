@@ -4,13 +4,6 @@ const conf = {
     config.externals = config.externals || [];
     config.externals.push('log4js');
 
-    config.plugins = config.plugins.filter((plugin: any) => {
-      if (plugin.constructor.name === 'ForkTsCheckerWebpackPlugin') {
-        return false;
-      }
-      return true;
-    });
-
     return config;
   },
 };

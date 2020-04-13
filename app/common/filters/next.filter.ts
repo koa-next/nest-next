@@ -8,7 +8,7 @@ import next from 'next';
 import Server from 'next/dist/next-server/server/next-server';
 import config from '../../../config';
 
-const debug = require('debug')('nest-next:filters:next');
+const debug = require('debug')('filters:next');
 
 type App = Server & {
   prepared?: boolean;

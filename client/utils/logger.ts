@@ -11,14 +11,20 @@ const config: Configuration = {
     NextAccess: {
       type: isPro ? 'dateFile' : 'console',
       filename: 'logs/next-access.log',
-      pattern: '-yyyy-MM-dd',
       compress: true,
+      layout: {
+        type: 'pattern',
+        pattern: '%d %p %c %m',
+      },
     },
     error: {
       type: isPro ? 'dateFile' : 'console',
       filename: 'logs/next-error.log',
-      pattern: '-yyyy-MM-dd',
       compress: true,
+      layout: {
+        type: 'pattern',
+        pattern: '%d %p %c %m',
+      },
     },
     NextError: {
       type: 'logLevelFilter',

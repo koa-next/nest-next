@@ -1,0 +1,10 @@
+version: "2.2"
+services:
+  app:
+    container_name: "nest-next"
+    image: 
+    ports:
+      -  80:80
+    volumes:
+      - /tmp/logs:/src/logs
+    restart: always
